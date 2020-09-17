@@ -17,7 +17,7 @@ def dl(x):
 p = mp.Pool(10)
 
 urls = fread('pmc_urls.txt').split('\n') >> filt(id)
-urls = urls[2941000:]
+
 pbar = tqdm(total=len(urls))
 for _ in p.imap(dl, urls):
     pbar.update(1)
